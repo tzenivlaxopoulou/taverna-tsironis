@@ -511,7 +511,6 @@ p {
 
 .taste-card {
   display: grid;
-  gap: var(--space-3);
   overflow: hidden;
   background: var(--white);
   border: 1px solid rgba(75, 47, 34, 0.12);
@@ -521,10 +520,19 @@ p {
 
 .taste-card img {
   aspect-ratio: 4 / 3;
+  display: block;
 }
 
 .taste-card div {
-  padding: 0 var(--space-4) var(--space-4);
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+  padding: var(--space-4);
+  background: var(--paper-soft);
+}
+
+.taste-card h3 {
+  margin: 0;
 }
 
 .taste-card p {
@@ -784,6 +792,13 @@ p {
   color: var(--espresso);
 }
 
+.contact-person {
+  margin: var(--space-3) 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
 .contact-actions,
 .social-links {
   display: flex;
@@ -803,45 +818,44 @@ p {
   text-underline-offset: 4px;
 }
 
-.map-placeholder {
+.map-embed-card {
   display: grid;
-  min-height: 360px;
-  align-content: center;
-  justify-items: center;
-  padding: var(--space-5);
-  text-align: center;
-  background:
-    linear-gradient(90deg, rgba(75, 47, 34, 0.08) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(75, 47, 34, 0.08) 1px, transparent 1px),
-    var(--paper-soft);
-  background-size: 28px 28px;
+  gap: var(--space-3);
+  align-self: start;
+  padding: var(--space-4);
+  background: var(--paper-soft);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
 }
 
-.map-placeholder span {
-  display: inline-flex;
-  width: 66px;
-  height: 66px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-3);
-  color: var(--white);
-  background: var(--olive);
-  border-radius: 50%;
-  font-weight: 900;
-}
-
-.map-placeholder strong {
-  display: block;
+.map-card-copy h3 {
+  margin: 0 0 0.35rem;
   color: var(--espresso);
-  font-size: 1.12rem;
+  font-size: 1.22rem;
 }
 
-.map-placeholder p {
-  max-width: 360px;
-  margin: var(--space-2) 0 var(--space-4);
+.map-card-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.map-embed {
+  min-height: 300px;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) - 4px);
+  aspect-ratio: 4 / 3;
+}
+
+.map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  border: 0;
 }
 
 .preview-note {
@@ -1198,6 +1212,11 @@ body.lightbox-open .mobile-call-cta {
 
   .hero-visual {
     min-height: 320px;
+  }
+
+  .map-embed,
+  .map-embed iframe {
+    min-height: 240px;
   }
 
   .photo-tile--large img {
