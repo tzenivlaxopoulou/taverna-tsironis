@@ -62,13 +62,19 @@
       closeNav();
       target.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "start" });
       history.pushState(null, "", targetId);
+      setActiveLink(target.id === "hero" ? null : target.id);
+      window.setTimeout(setActiveSection, prefersReducedMotion ? 0 : 240);
+      if (!prefersReducedMotion) {
+        window.setTimeout(setActiveSection, 900);
+        window.setTimeout(setActiveSection, 1600);
+      }
     });
   });
 
   const navSectionLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
   const setActiveLink = (id) => {
     navSectionLinks.forEach((link) => {
-      const isActive = link.getAttribute("href") === `#${id}`;
+      const isActive = id && link.getAttribute("href") === `#${id}`;
       if (isActive) {
         link.setAttribute("aria-current", "true");
       } else {
@@ -77,25 +83,21 @@
     });
   };
 
-  if ("IntersectionObserver" in window && sections.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  const setActiveSection = () => {
+    if (!sections.length) return;
 
-        if (visible && visible.target.id !== "hero") {
-          setActiveLink(visible.target.id);
-        }
-      },
-      {
-        rootMargin: "-32% 0px -55% 0px",
-        threshold: [0.15, 0.3, 0.6]
+    const headerOffset = (header?.offsetHeight || 0) + 48;
+    let activeSection = null;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= headerOffset) {
+        activeSection = section;
       }
-    );
+    });
 
-    sections.forEach((section) => observer.observe(section));
-  }
+    setActiveLink(activeSection && activeSection.id !== "hero" ? activeSection.id : null);
+  };
 
   const filterButtons = Array.from(document.querySelectorAll("[data-filter]"));
   const galleryItems = Array.from(document.querySelectorAll("[data-category]"));
@@ -218,11 +220,20 @@
   window.addEventListener("scroll", () => {
     setHeaderState();
     setMobileCtaState();
+    setActiveSection();
   }, { passive: true });
-  window.addEventListener("resize", setMobileCtaState);
-  window.addEventListener("hashchange", setMobileCtaState);
+  window.addEventListener("resize", () => {
+    setMobileCtaState();
+    setActiveSection();
+  });
+  window.addEventListener("hashchange", () => {
+    setMobileCtaState();
+    setActiveSection();
+  });
   setHeaderState();
   setMobileCtaState();
+  setActiveSection();
   window.setTimeout(setMobileCtaState, 120);
+  window.setTimeout(setActiveSection, 120);
   setGalleryFilter("foods");
 })();
