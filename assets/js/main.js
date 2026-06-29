@@ -15,12 +15,12 @@
   const setMobileCtaState = () => {
     if (!mobileCallCta) return;
     const contact = document.querySelector("#contact");
-    const reviews = document.querySelector("#reviews");
+    const gallery = document.querySelector("#gallery");
     const contactTop = contact ? contact.getBoundingClientRect().top : Number.POSITIVE_INFINITY;
-    const reviewsTop = reviews ? reviews.getBoundingClientRect().top : Number.POSITIVE_INFINITY;
-    const beforeReviews = reviewsTop > window.innerHeight - 120;
+    const galleryTop = gallery ? gallery.getBoundingClientRect().top : Number.POSITIVE_INFINITY;
+    const beforeGallery = galleryTop > window.innerHeight - 120;
     const beforeContact = contactTop > window.innerHeight - 120;
-    mobileCallCta.classList.toggle("is-visible", window.scrollY > 520 && beforeReviews && beforeContact);
+    mobileCallCta.classList.toggle("is-visible", window.scrollY > 520 && beforeGallery && beforeContact);
   };
 
   const closeNav = () => {
