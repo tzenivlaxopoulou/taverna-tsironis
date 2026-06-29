@@ -2593,6 +2593,56 @@ h3 {
   white-space: nowrap;
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 0.28rem;
+  min-width: max-content;
+  padding: 0.35rem 0.55rem;
+  color: rgba(255, 248, 234, 0.76);
+  border-top: 1px solid rgba(255, 248, 234, 0.12);
+  font-size: 0.74rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: visible;
+}
+
+.language-switcher a,
+.language-switcher span {
+  flex: 0 0 auto;
+  padding: 0.28rem 0.18rem;
+  color: inherit;
+  border-radius: 999px;
+  font-size: inherit;
+  letter-spacing: inherit;
+  line-height: 1;
+  text-transform: inherit;
+  box-shadow: none;
+}
+
+.language-switcher a:hover {
+  color: var(--champagne);
+  background: transparent;
+  box-shadow: none;
+}
+
+.language-switcher a[aria-current="true"],
+.language-switcher [aria-current="page"] {
+  color: var(--champagne);
+  background: transparent;
+  box-shadow: inset 0 -1px 0 var(--champagne);
+}
+
+.language-switcher span[aria-hidden="true"] {
+  padding-inline: 0;
+  color: rgba(255, 248, 234, 0.38);
+  box-shadow: none;
+}
+
 @media (min-width: 1120px) and (max-width: 1199px) {
   .nav-toggle {
     display: inline-flex;
@@ -2640,6 +2690,11 @@ h3 {
     font-size: 0.92rem;
     letter-spacing: 0.07em;
   }
+
+  .language-switcher {
+    margin-top: 0.18rem;
+    padding: 0.7rem 0.85rem 0.45rem;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -2648,17 +2703,18 @@ h3 {
   }
 
   .site-nav {
-    flex: 0 1 auto;
-    gap: 0.02rem;
-    min-width: 0;
-    padding: 0.24rem;
+    flex: 0 0 auto;
+    gap: 0;
+    min-width: max-content;
+    overflow: visible;
+    padding: 0.22rem;
   }
 
   .site-nav a {
     flex: 0 0 auto;
-    padding: 0.5rem 0.5rem;
-    font-size: 0.76rem;
-    letter-spacing: 0.055em;
+    padding: 0.48rem 0.34rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.045em;
     line-height: 1;
   }
 
@@ -2667,6 +2723,40 @@ h3 {
     min-height: 42px;
     padding-inline: 0.98rem;
     letter-spacing: 0.06em;
+  }
+
+  .language-switcher {
+    flex: 0 0 auto;
+    margin-left: 0.08rem;
+    min-width: max-content;
+    padding: 0.48rem 0.42rem;
+    border-top: 0;
+    border-left: 1px solid rgba(200, 168, 106, 0.22);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+
+  .site-nav .language-switcher a,
+  .site-nav .language-switcher span {
+    flex: 0 0 auto;
+    padding: 0.28rem 0.16rem;
+    font-size: inherit;
+    letter-spacing: inherit;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .site-header.is-scrolled .language-switcher {
+    color: rgba(29, 21, 17, 0.66);
+    border-left-color: rgba(43, 29, 22, 0.14);
+  }
+
+  .site-header.is-scrolled .language-switcher span[aria-hidden="true"] {
+    color: rgba(29, 21, 17, 0.28);
+  }
+
+  .site-header.is-scrolled .language-switcher [aria-current="page"] {
+    color: var(--champagne);
   }
 }
 
@@ -2696,5 +2786,10 @@ h3 {
     padding-inline: 0.66rem;
     font-size: 0.8rem;
     letter-spacing: 0.065em;
+  }
+
+  .language-switcher {
+    padding-inline: 0.52rem;
+    font-size: 0.7rem;
   }
 }

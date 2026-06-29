@@ -6,6 +6,7 @@
   const sections = Array.from(document.querySelectorAll("main section[id]"));
   const mobileCallCta = document.querySelector(".mobile-call-cta");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isEnglish = document.documentElement.lang === "en";
 
   const setHeaderState = () => {
     if (!header) return;
@@ -28,7 +29,7 @@
     header.classList.remove("is-open");
     document.body.classList.remove("nav-open");
     navToggle.setAttribute("aria-expanded", "false");
-    navToggle.setAttribute("aria-label", "Άνοιγμα μενού");
+    navToggle.setAttribute("aria-label", isEnglish ? "Open menu" : "Άνοιγμα μενού");
   };
 
   const openNav = () => {
@@ -36,7 +37,7 @@
     header.classList.add("is-open");
     document.body.classList.add("nav-open");
     navToggle.setAttribute("aria-expanded", "true");
-    navToggle.setAttribute("aria-label", "Κλείσιμο μενού");
+    navToggle.setAttribute("aria-label", isEnglish ? "Close menu" : "Κλείσιμο μενού");
   };
 
   if (navToggle && nav) {
@@ -103,10 +104,15 @@
   const galleryItems = Array.from(document.querySelectorAll("[data-category]"));
   const galleryStatus = document.querySelector("[data-gallery-status]");
 
-  const galleryLabels = {
-    foods: "οι φωτογραφίες φαγητών",
-    space: "οι φωτογραφίες χώρου"
-  };
+  const galleryLabels = isEnglish
+    ? {
+        foods: "food photos",
+        space: "space photos"
+      }
+    : {
+        foods: "οι φωτογραφίες φαγητών",
+        space: "οι φωτογραφίες χώρου"
+      };
 
   const setGalleryFilter = (filter) => {
     filterButtons.forEach((button) => {
@@ -120,7 +126,10 @@
     });
 
     if (galleryStatus) {
-      galleryStatus.textContent = `Εμφανίζονται ${galleryLabels[filter] || "οι φωτογραφίες"}.`;
+      const englishLabel = galleryLabels[filter] || "Photos";
+      galleryStatus.textContent = isEnglish
+        ? `${englishLabel.charAt(0).toUpperCase()}${englishLabel.slice(1)} are currently shown.`
+        : `Εμφανίζονται ${galleryLabels[filter] || "οι φωτογραφίες"}.`;
     }
   };
 

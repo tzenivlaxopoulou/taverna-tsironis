@@ -81,3 +81,12 @@ http://localhost:8000
 - Υπάρχει σύνδεση με Google Maps.
 - Υπάρχει σύνδεση με Facebook.
 - Το site είναι mobile responsive.
+
+## Phase 6 bilingual notes
+
+- Προστέθηκε English version στο `en/index.html`.
+- Η ελληνική σελίδα παραμένει στο `index.html`.
+- Προστέθηκε language switcher `EL / EN` στο navbar.
+- Οι δύο γλώσσες μοιράζονται το ίδιο CSS, JavaScript και photos folder.
+- Τα canonical / Open Graph live URLs παραμένουν pending μέχρι να δοθεί τελικό domain.
+- Δεν έγινε commit.
