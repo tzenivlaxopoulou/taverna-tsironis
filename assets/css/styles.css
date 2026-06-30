@@ -3284,3 +3284,362 @@ h3 {
     font-size: 1.05em;
   }
 }
+
+/* Phase 6.7: PNG chef knife navbar asset */
+@media (min-width: 1360px) {
+  .knife-nav-shell {
+    position: relative;
+    display: block;
+    flex: 0 0 auto;
+    width: clamp(900px, 68vw, 980px);
+    aspect-ratio: 1960 / 172;
+    height: auto;
+    min-width: 0;
+    filter: none;
+    isolation: isolate;
+  }
+
+  .knife-nav-shell::before {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url("../img/chef-knife-navbar-transparent.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: "";
+    pointer-events: none;
+  }
+
+  .knife-nav-svg {
+    display: none;
+  }
+
+  .knife-nav-content {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 11.8% minmax(0, 61.4%) minmax(176px, 26.8%);
+    align-items: center;
+    padding: 0 1.05rem 0 0.74rem;
+  }
+
+  .knife-nav-content .knife-blade-mark {
+    display: block;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .knife-nav-content .site-nav {
+    display: grid;
+    grid-template-columns:
+      minmax(72px, 1.08fr)
+      minmax(62px, 0.9fr)
+      minmax(64px, 0.92fr)
+      minmax(82px, 1.08fr)
+      minmax(92px, 1.18fr)
+      minmax(68px, 0.9fr)
+      minmax(88px, 1.14fr)
+      minmax(58px, 0.74fr);
+    align-items: center;
+    width: 100%;
+    height: 56%;
+    min-height: 46px;
+    margin: 0;
+    padding: 0 0.12rem 0 0.08rem;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    clip-path: none;
+  }
+
+  .knife-nav-content .nav-icon {
+    display: none;
+  }
+
+  .knife-nav-content .site-nav > a {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    min-width: 0;
+    min-height: 100%;
+    padding: 0.18rem 0.1rem;
+    overflow: hidden;
+    color: rgba(42, 31, 25, 0.78);
+    font-size: clamp(0.5rem, 0.4vw, 0.58rem);
+    font-weight: 850;
+    letter-spacing: 0.025em;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 252, 244, 0.58);
+  }
+
+  .knife-nav-content .nav-label {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+  }
+
+  .knife-nav-content .site-nav > a:nth-child(4) .nav-label,
+  .knife-nav-content .site-nav > a:nth-child(5) .nav-label,
+  .knife-nav-content .site-nav > a:nth-child(7) .nav-label {
+    font-size: 0.94em;
+  }
+
+  .knife-nav-content .site-nav > a:hover,
+  .knife-nav-content .site-nav > a[aria-current="true"] {
+    color: #7f4f2f;
+    background: rgba(255, 248, 234, 0.18);
+    box-shadow: inset 0 -2px 0 rgba(127, 79, 47, 0.34);
+  }
+
+  .knife-nav-content .language-switcher {
+    display: inline-flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 0.04rem;
+    width: 100%;
+    min-width: 0;
+    min-height: 100%;
+    margin: 0;
+    padding: 0 0.12rem;
+    overflow: visible;
+    color: rgba(42, 31, 25, 0.58);
+    border-left: 0;
+    font-size: clamp(0.56rem, 0.42vw, 0.64rem);
+    font-weight: 850;
+    letter-spacing: 0.055em;
+    line-height: 1;
+    white-space: nowrap;
+    text-shadow: 0 1px 0 rgba(255, 252, 244, 0.52);
+  }
+
+  .knife-nav-content .site-nav .language-switcher a,
+  .knife-nav-content .site-nav .language-switcher span {
+    flex: 0 0 auto;
+    padding: 0.18rem 0.08rem;
+    line-height: 1;
+  }
+
+  .knife-nav-content .site-nav .language-switcher a:hover,
+  .knife-nav-content .site-nav .language-switcher [aria-current="page"] {
+    color: #7f4f2f;
+    background: transparent;
+    box-shadow: inset 0 -1px 0 rgba(127, 79, 47, 0.48);
+  }
+
+  .knife-nav-content .header-cta {
+    justify-self: end;
+    width: min(100%, 208px);
+    min-height: 58%;
+    margin: 0;
+    padding: 0.66rem 1.18rem 0.66rem 2.25rem;
+    justify-content: center;
+    color: #fff8ea;
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    clip-path: none;
+    box-shadow: none;
+    font-size: clamp(0.58rem, 0.54vw, 0.72rem);
+    font-weight: 950;
+    letter-spacing: 0.065em;
+    line-height: 1;
+    text-shadow:
+      0 1px 2px rgba(20, 13, 10, 0.82),
+      0 0 12px rgba(255, 248, 234, 0.24);
+  }
+
+  .knife-nav-content .header-cta::before,
+  .knife-nav-content .header-cta::after {
+    content: none;
+  }
+
+  .knife-nav-content .header-cta:hover {
+    color: #fffdf6;
+    background: rgba(255, 248, 234, 0.06);
+    box-shadow: none;
+    transform: translateY(-1px);
+  }
+
+  .knife-nav-content .header-cta .cta-arrow {
+    margin-left: 0.34rem;
+    font-size: 1.08em;
+  }
+}
+
+/* Phase 6.8: calibrate HTML overlay to the PNG blade cells */
+@media (min-width: 1360px) {
+  .knife-nav-content {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    padding: 0;
+  }
+
+  .knife-nav-content .knife-blade-mark {
+    display: none;
+  }
+
+  .knife-nav-content .site-nav {
+    position: absolute;
+    top: 22%;
+    left: 2.05%;
+    display: grid;
+    grid-template-columns:
+      minmax(84px, 0.92fr)
+      minmax(76px, 1fr)
+      minmax(76px, 1fr)
+      minmax(86px, 1fr)
+      minmax(98px, 1.02fr)
+      minmax(76px, 1fr)
+      minmax(82px, 0.78fr)
+      minmax(58px, 0.65fr);
+    align-items: stretch;
+    width: 76.2%;
+    height: 55%;
+    min-height: 44px;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .knife-nav-content .site-nav > a {
+    min-height: 100%;
+    padding: 0.12rem 0.14rem;
+    color: rgba(42, 31, 25, 0.8);
+    font-size: clamp(0.54rem, 0.44vw, 0.64rem);
+    font-weight: 850;
+    letter-spacing: 0.018em;
+    text-shadow: 0 1px 0 rgba(255, 252, 244, 0.66);
+  }
+
+  .knife-nav-content .site-nav > a:nth-child(4) .nav-label,
+  .knife-nav-content .site-nav > a:nth-child(5) .nav-label,
+  .knife-nav-content .site-nav > a:nth-child(7) .nav-label {
+    font-size: 0.9em;
+    letter-spacing: 0.01em;
+  }
+
+  .knife-nav-content .language-switcher {
+    align-self: stretch;
+    min-height: 100%;
+    padding: 0 0.06rem;
+    overflow: visible;
+    font-size: clamp(0.58rem, 0.43vw, 0.66rem);
+    letter-spacing: 0.045em;
+  }
+
+  .knife-nav-content .site-nav .language-switcher a,
+  .knife-nav-content .site-nav .language-switcher span {
+    padding-inline: 0.07rem;
+  }
+
+  .knife-nav-content .header-cta {
+    position: absolute;
+    top: 23%;
+    right: 3.45%;
+    display: inline-flex;
+    align-items: center;
+    width: 18.9%;
+    min-height: 54%;
+    padding: 0.68rem 1.22rem 0.68rem 1.55rem;
+    color: #fff8ea;
+    background: linear-gradient(90deg, rgba(20, 13, 10, 0.24), rgba(20, 13, 10, 0.06));
+    border-radius: 999px;
+    font-size: clamp(0.76rem, 0.66vw, 0.92rem);
+    font-weight: 1000;
+    letter-spacing: 0.09em;
+    text-shadow:
+      0 2px 3px rgba(20, 13, 10, 0.9),
+      0 0 12px rgba(255, 248, 234, 0.26);
+  }
+
+  html[lang="en"] .knife-nav-content .header-cta {
+    font-size: clamp(0.68rem, 0.58vw, 0.8rem);
+    letter-spacing: 0.075em;
+  }
+
+  .knife-nav-content .header-cta .cta-arrow {
+    margin-left: 0.42rem;
+    font-size: 1.14em;
+    line-height: 0.9;
+  }
+}
+
+/* Phase 6.9: desktop PNG knife navbar icons and final cell alignment */
+@media (min-width: 1360px) {
+  .knife-nav-content .site-nav {
+    top: 18.5%;
+    grid-template-columns:
+      minmax(84px, 0.92fr)
+      minmax(76px, 1fr)
+      minmax(76px, 1fr)
+      minmax(86px, 1fr)
+      minmax(98px, 1.02fr)
+      minmax(76px, 0.96fr)
+      minmax(90px, 0.9fr)
+      minmax(56px, 0.58fr);
+    height: 61%;
+  }
+
+  .knife-nav-content .site-nav > a {
+    display: grid;
+    grid-template-rows: 15px auto;
+    align-content: center;
+    justify-items: center;
+    row-gap: 0.14rem;
+    padding: 0.22rem 0.12rem 0.16rem;
+    overflow: visible;
+  }
+
+  .knife-nav-content .nav-icon {
+    display: block;
+    width: 13px;
+    height: 13px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.55;
+    opacity: 0.68;
+  }
+
+  .knife-nav-content .nav-label {
+    line-height: 1;
+  }
+
+  .knife-nav-content .site-nav > a:nth-child(7) {
+  transform: translateX(18px);
+}
+
+.knife-nav-content .site-nav > a:nth-child(7) .nav-icon,
+.knife-nav-content .site-nav > a:nth-child(7) .nav-label {
+  transform: none;
+}
+
+.knife-nav-content .language-switcher {
+  justify-content: center;
+  transform: translate(-18px, -4px);
+}
+
+.knife-nav-content .language-switcher a,
+.knife-nav-content .language-switcher span {
+  transform: none;
+}
+
+  .knife-nav-content .header-cta {
+    right: 2.65%;
+    width: 18.2%;
+    padding-inline: 1.1rem;
+  }
+}
