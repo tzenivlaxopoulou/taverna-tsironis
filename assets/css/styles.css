@@ -3200,3 +3200,87 @@ h3 {
     font-size: 0.7rem;
   }
 }
+
+@media (min-width: 1360px) {
+  .knife-nav-content {
+    grid-template-columns: 116px minmax(0, 1fr) clamp(145px, 10.8vw, 158px);
+    padding: 0 0.55rem 0 0.62rem;
+  }
+
+  .knife-nav-content .site-nav {
+    display: grid;
+    grid-template-columns:
+      minmax(72px, 1.08fr)
+      minmax(62px, 0.9fr)
+      minmax(64px, 0.92fr)
+      minmax(78px, 1.08fr)
+      minmax(88px, 1.2fr)
+      minmax(66px, 0.9fr)
+      minmax(86px, 1.15fr)
+      minmax(54px, 0.74fr);
+    align-items: stretch;
+    width: 100%;
+    padding: 0 0.24rem 0 0;
+    overflow: visible;
+  }
+
+  .knife-nav-content .site-nav > a {
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    padding: 0.54rem 0.12rem 0.46rem;
+    overflow: hidden;
+    font-size: clamp(0.48rem, 0.4vw, 0.58rem);
+    letter-spacing: 0.005em;
+    line-height: 1.04;
+    text-align: center;
+  }
+
+  .knife-nav-content .nav-label {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+  }
+
+  .knife-nav-content .site-nav > a:nth-child(4) .nav-label,
+  .knife-nav-content .site-nav > a:nth-child(5) .nav-label,
+  .knife-nav-content .site-nav > a:nth-child(7) .nav-label {
+    font-size: 0.94em;
+  }
+
+  .knife-nav-content .language-switcher {
+    min-width: 0;
+    justify-content: center;
+    padding: 0 0.18rem;
+    overflow: hidden;
+    font-size: clamp(0.56rem, 0.43vw, 0.64rem);
+    letter-spacing: 0.045em;
+  }
+
+  .knife-nav-content .site-nav .language-switcher a,
+  .knife-nav-content .site-nav .language-switcher span {
+    padding-inline: 0.1rem;
+  }
+
+  .knife-nav-content .header-cta {
+    justify-self: end;
+    width: min(100%, 148px);
+    padding: 0.72rem 1.05rem 0.72rem 2.05rem;
+    justify-content: center;
+    color: #fff8ea;
+    font-size: clamp(0.62rem, 0.54vw, 0.72rem);
+    font-weight: 950;
+    letter-spacing: 0.075em;
+    text-shadow:
+      0 1px 2px rgba(20, 13, 10, 0.72),
+      0 0 10px rgba(255, 248, 234, 0.18);
+  }
+
+  .knife-nav-content .header-cta .cta-arrow {
+    margin-left: 0.34rem;
+    font-size: 1.05em;
+  }
+}
